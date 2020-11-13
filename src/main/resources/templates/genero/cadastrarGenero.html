@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Generos - Catálogo de Filmes</title>
+</head>
+<body>
+	<section layout:fragment="corpo" class="container" th:if="${session.usuarioOn.nivelAcesso == T(br.ifpe.fabio.ativ06.access.NivelAcesso).ADM}">
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<h3>Cadastro de Generos</h3>
+				<form action="/genero/salvar" method="post" th:object="${genero}">
+				
+					<div th:replace="fragments/validacao :: validacao"></div>
+					
+					<input type="hidden" th:field="*{id}" >
+					
+					<div class="form-group">
+						<label>*Titulo</label> 
+						<input type="text" th:field="*{titulo}" class="form-control">
+					</div>
+					
+					<button type="submit" class="btn btn-outline-dark mt-4">Cadastrar</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
