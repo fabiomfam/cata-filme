@@ -18,7 +18,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioDAO usuarioDAO;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public String exibirIndex(Usuario usuario) {
 		return "index";
 	}
@@ -28,7 +28,7 @@ public class UsuarioController {
 		return "home";
 	}
 
-	@PostMapping("login")
+	@PostMapping("/login")
 	public String logar(Usuario usuario, HttpSession session, RedirectAttributes ra) {
 		usuario = this.usuarioDAO.findByLoginAndSenha(usuario.getLogin(), Util.md5(usuario.getSenha()));
 		if (usuario != null) {

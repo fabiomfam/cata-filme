@@ -9,8 +9,8 @@ public class AcessoConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		//registry.addInterceptor(new AdmInterceptor())
-			//.addPathPatterns(new String[]{"/*"})
+		registry.addInterceptor(new AdmInterceptor())
+			.addPathPatterns(new String[]{"/home"});
 			//.excludePathPatterns(new String[] {"/", "/login", "/acessoNegado"});
 		
 	}
