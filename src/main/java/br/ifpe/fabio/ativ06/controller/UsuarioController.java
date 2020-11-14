@@ -20,7 +20,7 @@ public class UsuarioController {
 	
 	@GetMapping("")
 	public String exibirIndex(Usuario usuario) {
-		return "index";
+		return "Index";
 	}
 	
 	@GetMapping("/home")
